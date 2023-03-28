@@ -1,19 +1,19 @@
 import styled from "styled-components";
 
-export const Button = styled.button`
+export const ButtonSmall = styled.button`
     width: 100%;
-    max-width: 350px;
-    padding: 16px 20px;
+    max-width: 50px;
+    padding: 10px 10px;
     outline: none;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
-    background-color: #e29f35;
+    font-size: 14px;
+    background-color: #B0B0B0;
     cursor: pointer;
     color: white;
     font-weight: 600;
 
     &:hover {
-        background-color: #fcb13b;
+        background-color: #BEBEBE;
     }
 `;

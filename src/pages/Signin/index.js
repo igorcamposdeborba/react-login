@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
+import Logo from "../../components/Logo";
 import * as C from "./styles";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
@@ -13,7 +14,12 @@ const Signin = () => {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
 
-    const handleLogin = () => {
+    // Ao teclar enter envia o formulário
+    
+
+    const handleLogin = (keyboard) => {
+        keyboard.preventDefault();
+
         if (!email || !password) { // verificação se tem os campos preenchidos
             setError("Preencha todos os campos");
             return;
@@ -29,7 +35,8 @@ const Signin = () => {
 
   return (
     <C.Container>
-        <C.Label>Login</C.Label>
+        <Logo/>
+        <C.Label >Login</C.Label>
         <C.Content>
             <Input
                 type = "email"
@@ -41,9 +48,10 @@ const Signin = () => {
                 type = "password"
                 placeholder = "Senha"
                 value = {password}
-                onChange = {(e) => [setPassword(e.target.value), setError("")]}/>
+                onChange = {(e) => [setPassword(e.target.value), setError("")]}
+                onKeyDown={(keyboard) => keyboard.key === 'Enter' && handleLogin(keyboard)} />
             <C.LabelError> {error} </C.LabelError>
-            <Button Text="Entrar" onClick={ handleLogin } />
+            <Button Text="Entrar" onClick={ handleLogin }/>
 
             <C.LabelSignup>
                 Não tem uma conta?

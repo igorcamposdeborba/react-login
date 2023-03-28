@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
+import Logo from "../../components/Logo";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import * as C from "./styles";
@@ -36,6 +37,7 @@ const Signup = () => {
 
   return (
     <C.Container>
+        <Logo/>
         <C.Label>Cadastro</C.Label>
             <C.Content>
                 <Input
@@ -48,15 +50,14 @@ const Signup = () => {
                 type="email"
                 placeholder="Confirme seu E-mail"
                 value={emailConfirm}
-                onChange={(e) => [setEmailConfirm(e.target.value), setError("")]}
-            />
+                onChange={(e) => [setEmailConfirm(e.target.value), setError("")]} />
 
             <Input
                 type="password"
                 placeholder= "Digite sua senha"
                 value = {password}
                 onChange = {(e) => [setPassword(e.target.value), setError("")]}
-            />
+                onKeyDown={(keyboard) => keyboard.key === 'Enter' && handleSignup(keyboard)} />
             <C.Small>Mínimo 6 caracteres</C.Small>
             
             <C.LabelError> {error} </C.LabelError>
