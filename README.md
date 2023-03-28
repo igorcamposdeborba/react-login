@@ -1,6 +1,14 @@
-# Getting Started with Create React App
+# Login with React and LocalStorage
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+- Project name: Library login
+- About the project: Desenvolvimento de um sistema de login com React e vídeo explicativo.
+- Status: concluído
+- Functionalities: login e cadastro com LocalStorage.
+- How to use: Digite npm start na pasta principal do projeto
+- Video to explanation the code: https://unisinos.instructuremedia.com/embed/90b8085f-8995-4163-9d66-77b3ba04a30c
+- Files in GitHub: https://github.com/igorcamposdeborba/react-login
 
 ## Available Scripts
 
